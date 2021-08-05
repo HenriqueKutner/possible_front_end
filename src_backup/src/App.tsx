@@ -7,28 +7,19 @@ import { Details } from './Components/Details/Details'
 
 function App() {
 
-  const [theme, setTheme] = useState<string>(() => {
-      const localData = localStorage.getItem('theme');
-      return localData ? JSON.parse(localData) : [];
-  })
-
-   useEffect(() => {
-    localStorage.setItem('theme', JSON.stringify(theme))
-  },[theme])
-
-  if(theme){console.log(theme)}
+  
 
   return (
 
     <Router>
       <GlobalStyle />
-      <Header theme={theme} setTheme={setTheme}/>
+      <Header />
       <Switch>
         <Route exact path="/">  
-          <Main theme={theme}/>
+          <Main />
         </Route>
         <Route exact path="/Details/:name">  
-          <Details theme={theme}/>
+          <Details />
         </Route>
       </Switch>
     </Router> 
