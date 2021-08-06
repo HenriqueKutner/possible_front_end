@@ -28,6 +28,7 @@ export const Main: React.FC<Props> = ({theme}) => {
     })  
     .then(data => {
         setCountry(data)
+        
     })
     },[])
     
@@ -60,8 +61,7 @@ export const Main: React.FC<Props> = ({theme}) => {
       })
     }
 
-  const regionWorld:string[] = ["Europe", "Asia", "Africa", "Americas"]
-  
+  const regionWorld:string[] = ["Africa", "Americas", "Asia", "Europe", "Oceania"]
   
   let color:string;
   let backgroundMain:string;
@@ -88,14 +88,15 @@ export const Main: React.FC<Props> = ({theme}) => {
           value={name}
           onChange={(e) => setName(e.target.value)}
           onKeyUp={searchName}
+          style={{color:theme == "dark" ? "white" : "black", background:theme == "dark" ? "hsl(209, 23%, 22%)" : "white"}}
           
         /><br/>
-        <select onChange={(e) => searchRegion(e.target.value)} >
+        <select onChange={(e) => searchRegion(e.target.value)} style={{color:theme == "dark" ? "white" : "black", background:theme == "dark" ? "hsl(209, 23%, 22%)" : "white"}} >
           <option value="" selected disabled hidden>Filter by Region</option>
           {regionWorld.map((e) => (<option value={e}>{e}</option>))}
         </select>
       </SearchWrapper>
-      <CardWrapper>
+      <CardWrapper style={{height: country && country.length <= 3 ? "100vh" : ""}}>
         {country && 
           country.map((e) => (
             <Card key={e.name} backCard={backCard}>

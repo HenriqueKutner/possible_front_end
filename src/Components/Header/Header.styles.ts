@@ -2,6 +2,15 @@ import styled from 'styled-components'
 
 export const HeaderContainer = styled.div `
 
+  width: 100%;
+  height: 70px;
+  display: flex;
+  color: ${(props) => props.color};
+  font-size: 14px;
+  justify-content: space-around;
+  align-items: center;
+  background-color: ${(props) => props.backgroundColor};
+
   @media screen and (max-width: 812px) {
     width: 100%;
     height: 70px;
@@ -13,15 +22,6 @@ export const HeaderContainer = styled.div `
     background-color: ${(props) => props.backgroundColor};
   }
 
-  
-    width: 100%;
-    height: 70px;
-    display: flex;
-    color: ${(props) => props.color};
-    font-size: 14px;
-    justify-content: space-around;
-    align-items: center;
-    background-color: ${(props) => props.backgroundColor};
   
 `
   

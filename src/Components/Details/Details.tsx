@@ -4,19 +4,19 @@ import { DetailsContainer, BackPage, Card, CardText } from './Details.styles';
 import { Link } from "react-router-dom"
 import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace';
 
-interface Country {
-  name: string;
-  population: number,
-  region: string,
-  capital: string,
-  flag: string,
-  nativeName: string,
-  subRegion: string,
-  topLevelDomain: string,
-  currencies: string,
-  languages: string,
-  borders: string
-}
+// interface Country {
+//   name: string;
+//   population: number,
+//   region: string,
+//   capital: string,
+//   flag: string,
+//   nativeName: string,
+//   subRegion: string,
+//   topLevelDomain: string,
+//   currencies: string,
+//   languages: string,
+//   borders: string
+// }
 
 interface Props {
   theme: string
@@ -26,7 +26,7 @@ interface Props {
 export const Details: React.FC<Props> = ({theme}) => {
 
   const { name } = useParams<string>();
-  const [country, setCountry] = useState<any>()
+  const [country, setCountry] = useState<string | number | any>()
 
   useEffect(() => {
     fetch(`https://restcountries.eu/rest/v2/name/${name}`)
@@ -58,27 +58,26 @@ export const Details: React.FC<Props> = ({theme}) => {
     <DetailsContainer backMain={backMain}>
       <BackPage>
         <Link to="/">
-          <h4><KeyboardBackspaceIcon /></h4></Link>
-          <p>Back</p>        
+          <h4 style={{color:theme == "dark" ? "white" : "black"}}><KeyboardBackspaceIcon /></h4></Link>
+          <p style={{color:theme == "dark" ? "white" : "black"}}>Back</p>        
       </BackPage>
       
       {country &&
         country.map((e) => (
-          
-            <Card key={e.name}>
-              <img src={e.flag}/>
-              <CardText color={color}>
-                <h3>{e.nativeName}</h3>
-                <p>Population: {e.population}</p>
-                <p>Region:  {e.region}</p>
-                <p>Sub Region:  {e.subregion}</p>
-                <p>Capital:  {e.capital}</p>
-                <p>Top Love  Domain: {e.topLevelDomain}</p>
-                <p>Currencies:  {e.currencies.map((r) => r.name)}</p>
-                <p>Languages: {e.languages.map((r) => r.nativeName)}</p>
-                <p>Border Countries:{e.borders}</p>
-              </CardText>
-            </Card>
+          <Card key={e.name}>
+            <img src={e.flag}/>
+            <CardText color={color}>
+              <h3>{e.nativeName}</h3>
+              <p><strong>Population:</strong> {e.population}</p>
+              <p><strong>Region:</strong>  {e.region}</p>
+              <p><strong>Sub Region:</strong>  {e.subregion}</p>
+              <p><strong>Capital:</strong>  {e.capital}</p>
+              <p><strong>Top Love</strong>  Domain: {e.topLevelDomain}</p>
+              <p><strong>Currencies:</strong>  {e.currencies.map((r) => r.name)}</p>
+              <p><strong>Languages:</strong> {e.languages.map((r) => r.nativeName)}</p>
+              <p><strong>Border Countries:</strong> {e.borders}</p>
+            </CardText>
+          </Card>
           
         )) 
       }

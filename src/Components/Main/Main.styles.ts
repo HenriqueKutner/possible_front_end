@@ -4,36 +4,40 @@ export const MainContainer = styled.div `
   width: 100%;
   background-color: ${(props) => props.backgroundMain};
   font-size: 16px;
-
 `
 
 export const SearchWrapper = styled.div`
-
-@media screen and (min-width: 800px){
   width: 100%;
   display: flex;
   justify-content: space-around;
-  height: 100px;
-  padding-top:25px;
+  height: 180px;
+  padding-top:55px;
   
   input{
-      width: 20%;
-      height: 40px;
-      margin-bottom: 5px;
-      font:20px;
+    width: 35%;
+    height: 55px;
+    margin-bottom: 5px;
+    font-size:18px;
+    padding-left:15px;
+    border:none;
   }
 
   select{
       width: 20%;
-      height: 40px;
+      height: 55px;
+      font-size:18px;
+      padding-left:15px;
+      border:none;
     }
-}
+
 
 
 
   @media screen and (max-width: 812px) {
     width: 100%;
     text-align: center;
+    display:flex;
+    flex-wrap:wrap;
     padding-top: 20px;
     padding-bottom: 20px;
 
@@ -57,23 +61,24 @@ export const SearchWrapper = styled.div`
 export const CardWrapper = styled.div`
  
   width: 100%;
-  display: flex;
+  display:flex;
+  justify-content:center;
   flex-wrap:wrap;
   
-  justify-content:center;
 `
 
 export const Card = styled.div `
 
-    width: 30%;
-   
-    margin-bottom: 5px;
+  width: 21%;
+  background-color:${(props) => props.backCard};
+  margin-bottom: 35px;
+  margin-right:12px;
     
-    
-    img {
-      width: 100%;
-      height:auto;
-    }
+  img {
+    width:  100%;
+    height: 55%;
+    object-fit: cover;
+  }
   
 
   @media screen and (max-width: 812px){
