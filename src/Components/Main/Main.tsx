@@ -82,6 +82,7 @@ export const Main: React.FC<Props> = ({theme}) => {
   return (
     <MainContainer backgroundMain={backgroundMain}>
       <SearchWrapper>
+        
         <input 
           placeholder="Search for a country..." 
           type="text"

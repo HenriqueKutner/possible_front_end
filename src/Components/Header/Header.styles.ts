@@ -6,10 +6,15 @@ export const HeaderContainer = styled.div `
   height: 70px;
   display: flex;
   color: ${(props) => props.color};
-  font-size: 14px;
+  font-size: 20px;
   justify-content: space-around;
   align-items: center;
   background-color: ${(props) => props.backgroundColor};
+
+  h3{
+    width:64%;
+    
+  }
 
   @media screen and (max-width: 812px) {
     width: 100%;

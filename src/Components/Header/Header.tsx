@@ -34,9 +34,8 @@ export const Header: React.FC<Props> = ({theme, setTheme}) => {
       <h3>Where in the world?</h3>
       <SubWrapper>
         <NightsStayOutlinedIcon />
-        <h3 onClick={darkMode}>Dark Mode</h3>
+        <h4 onClick={darkMode}>Dark Mode</h4>
       </SubWrapper>
-
     </HeaderContainer>
     
   )

@@ -67,15 +67,19 @@ export const Details: React.FC<Props> = ({theme}) => {
           <Card key={e.name}>
             <img src={e.flag}/>
             <CardText color={color}>
-              <h3>{e.nativeName}</h3>
-              <p><strong>Population:</strong> {e.population}</p>
-              <p><strong>Region:</strong>  {e.region}</p>
-              <p><strong>Sub Region:</strong>  {e.subregion}</p>
-              <p><strong>Capital:</strong>  {e.capital}</p>
-              <p><strong>Top Love</strong>  Domain: {e.topLevelDomain}</p>
-              <p><strong>Currencies:</strong>  {e.currencies.map((r) => r.name)}</p>
-              <p><strong>Languages:</strong> {e.languages.map((r) => r.nativeName)}</p>
-              <p><strong>Border Countries:</strong> {e.borders}</p>
+              <div>
+                <h3>{e.nativeName}</h3>
+                <p><strong>Population:</strong> {e.population}</p>
+                <p><strong>Region:</strong>  {e.region}</p>
+                <p><strong>Sub Region:</strong>  {e.subregion}</p>
+                <p><strong>Capital:</strong>  {e.capital}</p>
+                <p><strong>Border Countries:</strong> {e.borders + ","}</p>
+              </div>
+              <div>
+                <p><strong>Top Love</strong>  Domain: {e.topLevelDomain}</p>
+                <p><strong>Currencies:</strong>  {e.currencies.map((r) => r.name)}</p>
+                <p><strong>Languages:</strong> {e.languages.map((r) => r.nativeName + ", ")}</p>
+              </div>
             </CardText>
           </Card>
           

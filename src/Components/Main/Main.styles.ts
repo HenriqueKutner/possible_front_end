@@ -7,30 +7,34 @@ export const MainContainer = styled.div `
 `
 
 export const SearchWrapper = styled.div`
+
+
   width: 100%;
   display: flex;
   justify-content: space-around;
   height: 180px;
   padding-top:55px;
+  padding-right: 15px;
   
   input{
-    width: 35%;
+    width: 40%;
     height: 55px;
     margin-bottom: 5px;
     font-size:18px;
     padding-left:15px;
     border:none;
+    
   }
 
   select{
-      width: 20%;
+      width: 21%;
       height: 55px;
       font-size:18px;
       padding-left:15px;
       border:none;
     }
 
-
+  
 
 
   @media screen and (max-width: 812px) {
@@ -40,9 +44,10 @@ export const SearchWrapper = styled.div`
     flex-wrap:wrap;
     padding-top: 20px;
     padding-bottom: 20px;
-
+    padding-left:15px;
+    
     input{
-      width: 95%;
+      width: 100%;
       height: 40px;
       margin-bottom: 5px;
       border-color:transparent;
@@ -50,7 +55,7 @@ export const SearchWrapper = styled.div`
     }
 
     select{
-      width: 95%;
+      width: 100%;
       height: 40px;
       border-color:transparent;
     }

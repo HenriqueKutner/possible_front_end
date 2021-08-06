@@ -20,7 +20,7 @@ export const BackPage = styled.div `
 
   padding:20px;
   display: flex;
- 
+  
   h4 {
     color:black;
   }
@@ -29,27 +29,31 @@ export const BackPage = styled.div `
     margin-left: 15px;
     margin-top:1px; 
   }
+  
+
+
 `
 
 export const CardWrapper = styled.div`
- @media screen and (min-width: 900px){
+ @media screen and (min-width: 1000px){
   width: 100%;
   display: flex;
   flex-wrap:wrap;
-  margin-left: 40px;
+  
+  
  }
 `
 
 export const Card = styled.div `
 
-  @media screen and (min-width: 900px){
+  @media screen and (min-width: 1000px){
     width: 100%;
     margin-bottom: 5px;
     display:flex;
     justify-content: center;
-    
     img {
       width: 30%;
+   
     }
   }
 
@@ -72,22 +76,34 @@ export const Card = styled.div `
 export const CardText = styled.div `
 
   @media screen and (min-width: 1000px){
-
+    width:50%;
     color: ${(props) => props.color};
     padding:15px;
     padding-left: 22px;
-   
     
+    margin-left:50px;
+    display:flex;
     
     h3{
       margin-bottom:7px;
       font-weight:800;
-      
+      font-size:40px;
     }
 
     p{
       margin-bottom:5px;
       font-size: 12px;
+    }
+
+    div p{
+      font-size:16px;
+      padding-top:20px;
+    }
+
+    div:last-child{
+      
+      padding-top:60px;
+      padding-left:30px;
     }
   }
 
